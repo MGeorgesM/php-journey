@@ -22,6 +22,6 @@ function validateIpv4Address($ip) {
     return true;
 }
 
-$ipToValidate = '133.222.222.122';
+$ipToValidate = '01.222.222.255';
 echo validateIpv4Address($ipToValidate)
 ?>

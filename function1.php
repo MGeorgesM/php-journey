@@ -3,17 +3,18 @@ $operation = '10 / 2';
 
 function evaluateOperation($operation)
 {
-    $operators = ['+','-','*','%'];
+    $operators = ['+','-','*','/'];
     $operator = '';
     $operands = [];
     $result = 0;
+
+    $operation = trim($operation);
 
     for($i = 0; $i < strlen($operation); $i++)
     {
         if (in_array($operation[$i], $operators)) {
             $operator = $operation[$i];
-            $operation = str_replace($operation[$i],'',$operation);
-            $operands = explode('  ', $operation);
+            $operands = explode($operator, $operation);
             break;
         }
     }
