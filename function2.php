@@ -11,10 +11,8 @@ function filterNumbers ($string)
             array_push($numbers,$string[$i]);
         }
     }
-
+    sort($numbers);
     return $numbers;
 }
-
 print_r(filterNumbers($testString));
-
 ?>
