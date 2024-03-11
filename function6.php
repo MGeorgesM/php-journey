@@ -1,0 +1,27 @@
+<?php
+$ipToValidate = '133.222.222.122';
+function validateIpv4Address($ip) {
+    if (strlen($ip) > 15) {
+        return false;
+    }
+    $ipNumbers = explode('.',$ip);
+
+    if (count($ipNumbers) !== 4) {
+        return false;
+    }
+
+    foreach ($ipNumbers as $ipNumber) {
+
+        if (!is_numeric($ipNumber) || $ipNumber > 255 || $ipNumber < 0) {
+            return false;
+        }
+
+        if (is_string($ipNumber) && $ipNumber !== '0' && $ipNumber[0] === '0') {
+            return false;
+        }
+    }
+    return true;
+}
+
+echo validateIpv4Address($ipToValidate)
+?>
